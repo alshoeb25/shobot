@@ -9,7 +9,7 @@ class Lead extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['name', 'email', 'phone', 'conversation'];
+    protected $fillable = ['name', 'email', 'phone', 'conversation','organization_id', 'conversation_token'];
     protected $casts = ['conversation' => 'array'];
 }
 

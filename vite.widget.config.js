@@ -31,9 +31,9 @@ export default defineConfig({
       output: {
         entryFileNames: "bot-widget.js",
         assetFileNames: (assetInfo) => {
-          // if (assetInfo.name && assetInfo.name.endsWith(".css")) {
-          //   return "assets/style.css";
-          // }
+          if (assetInfo.name && assetInfo.name.endsWith(".css")) {
+            return "assets/style.css";
+          }
           return "assets/[name]-[hash][extname]";
         },
       },

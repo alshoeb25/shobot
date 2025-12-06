@@ -15,13 +15,13 @@ class LeadController extends Controller
         ]);
 
         $data = $request->only([
-            'org_id',
             'conversation_token',
             'name',
             'email',
             'phone',
             'conversation'
         ]);
+        $data['organization_id'] = $request->org_id;
         // If empty, force NULL so unique constraint does not break
         $data['conversation_token'] = $request->conversation_token ?: null;
 
