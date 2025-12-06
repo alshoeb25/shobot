@@ -1,0 +1,15 @@
+{
+  "resources/images/logo.png": {
+    "file": "assets/logo-DS3sH5lg.png",
+    "src": "resources/images/logo.png"
+  },
+  "resources/js/embed-widget.js": {
+    "file": "bot-widget.js",
+    "name": "embed-widget",
+    "src": "resources/js/embed-widget.js",
+    "isEntry": true,
+    "css": [
+      "assets/embed-widget-CsIXT5pB.css"
+    ]
+  }
+}
