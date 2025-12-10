@@ -16,7 +16,17 @@ class OrganizationController extends Controller
     {
         $this->authorize('viewAny', Organization::class);
 
-        $organizations = Organization::orderBy('id', 'desc')->paginate(20);
+        $user = auth()->user();
+
+        // Super admin → show all
+        if ($user->isSuper()) {
+            $organizations = Organization::orderBy('id', 'desc')->paginate(20);
+        } else {
+            // Normal user → show only assigned organizations
+            $organizations = $user->organizations()->paginate(10);
+        }
+
+        
         return view('admin.organizations.index', compact('organizations'));
     }
 
